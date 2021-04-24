@@ -58,8 +58,8 @@ func HtmlFuncMap() template.FuncMap {
 
 // GenericFuncMap returns a copy of the basic function map as a map[string]interface{}.
 func GenericFuncMap() map[string]interface{} {
-	gfm := make(map[string]interface{}, len(genericMap))
-	for k, v := range genericMap {
+	gfm := make(map[string]interface{}, len(GenericMap))
+	for k, v := range GenericMap {
 		gfm[k] = v
 	}
 	return gfm
@@ -94,7 +94,7 @@ var nonhermeticFunctions = []string{
 	"getHostByName",
 }
 
-var genericMap = map[string]interface{}{
+var GenericMap = map[string]interface{}{
 	"hello": func() string { return "Hello!" },
 
 	// Date functions
@@ -336,20 +336,20 @@ var genericMap = map[string]interface{}{
 	"mustChunk":   mustChunk,
 
 	// Crypto:
-	"bcrypt":            bcrypt,
-	"htpasswd":          htpasswd,
-	"genPrivateKey":     generatePrivateKey,
-	"derivePassword":    derivePassword,
-	"buildCustomCert":   buildCustomCertificate,
-	"genCA":             generateCertificateAuthority,
-	"genCAWithKey":      generateCertificateAuthorityWithPEMKey,
-	"genSelfSignedCert": generateSelfSignedCertificate,
+	"bcrypt":                   bcrypt,
+	"htpasswd":                 htpasswd,
+	"genPrivateKey":            generatePrivateKey,
+	"derivePassword":           derivePassword,
+	"buildCustomCert":          buildCustomCertificate,
+	"genCA":                    generateCertificateAuthority,
+	"genCAWithKey":             generateCertificateAuthorityWithPEMKey,
+	"genSelfSignedCert":        generateSelfSignedCertificate,
 	"genSelfSignedCertWithKey": generateSelfSignedCertificateWithPEMKey,
-	"genSignedCert":     generateSignedCertificate,
-	"genSignedCertWithKey": generateSignedCertificateWithPEMKey,
-	"encryptAES":        encryptAES,
-	"decryptAES":        decryptAES,
-	"randBytes":         randBytes,
+	"genSignedCert":            generateSignedCertificate,
+	"genSignedCertWithKey":     generateSignedCertificateWithPEMKey,
+	"encryptAES":               encryptAES,
+	"decryptAES":               decryptAES,
+	"randBytes":                randBytes,
 
 	// UUIDs:
 	"uuidv4": uuidv4,
